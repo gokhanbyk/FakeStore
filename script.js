@@ -15,7 +15,6 @@
 //     .then(res => res.json())
 //     .then(json => console.log(json))
 
-const row = document.querySelector('.row')
 
 async function getData() {
     try {
@@ -28,7 +27,6 @@ async function getData() {
         console.log(error)
     }
 }
-
 getData()
     .then(data => {
         console.log(data)
@@ -38,10 +36,12 @@ getData()
         // }
 
         let sepet = []
-
+        const row = document.querySelector('#row')
 
         data.forEach((urun) => {
             console.log(urun)
+
+            urun.quantity = 1
 
             // Card Yapısını Oluşturmaya başlıyoruz
             const col_3 = document.createElement('div')
@@ -108,5 +108,4 @@ getData()
 
 
     })
-
 
