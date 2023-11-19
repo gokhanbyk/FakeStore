@@ -36,6 +36,10 @@ getData()
         // for (let i = 0; i < data.length; i++) {
         //     console.log(data[i].title)
         // }
+
+        let sepet = []
+
+
         data.forEach((urun) => {
             console.log(urun)
 
@@ -72,6 +76,22 @@ getData()
             btn.setAttribute('class', 'btn btn-success')
             btn.textContent = 'Add To Cart'
 
+
+            btn.addEventListener('click', () => {
+                console.log(urun)
+
+                sepet.push(urun)
+
+                console.log(sepet)
+
+                let sepetJSON = JSON.stringify(sepet)
+                localStorage.setItem('sepet', sepetJSON)
+
+
+            })
+
+
+
             cardBody.appendChild(cardTitle)
             cardBody.appendChild(cardText)
             cardBody.appendChild(btn)
@@ -88,9 +108,5 @@ getData()
 
 
     })
-
-
-
-
 
 
